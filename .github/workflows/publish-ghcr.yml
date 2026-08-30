@@ -18,6 +18,8 @@ jobs:
       packages: write
 
     strategy:
+      # The backend image is a separate service; don't let it cancel the app image
+      fail-fast: false
       matrix:
         name: [whisper-webui, whisper-webui-backend]
 
